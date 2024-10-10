@@ -1,6 +1,5 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
-new URL('./lib/svgs/goal-1.svg', import.meta.url).href
 
 export class unSdg extends DDDSuper(LitElement) {
 
@@ -81,6 +80,12 @@ export class unSdg extends DDDSuper(LitElement) {
       img {
         width: 100%;
         height: 100%;
+      }
+      .random {
+        color: blue;
+      }
+      h1{
+        color: black;
       }
     `];
   }
