@@ -36,14 +36,17 @@
     button#random {
         color: black;
     }
-    h1{
+    h1{ /* had to change the color of text since it was invisible on a white background*/
         color: black;
     }
-    h2{
+    h2{ /* might try to add something to change based on background of web (dark mode light mode)*/  
       color: black;
     }
     p{
       color: black;
+    }
+    button#randomColor {
+        color: black;
     }
   </style>
   <title>un-sdg</title>
@@ -52,14 +55,30 @@
 <body>
   <div id="demo">
     <h1>un-sdg</h1>
+    
+    <!-- Randomize Goal Button -->
     <button id="random">Randomize Goal</button>
     <script>
       document.querySelector('#random').addEventListener('click', function(event) {
         const randomNumber = Math.floor(Math.random() * 17) + 1; 
         const sdg = document.getElementById('random-sdg');
         sdg.setAttribute('goal', randomNumber);
+        sdg.setAttribute('colorOnly', 'false');
       });
     </script>
+  
+    <!-- Randomize Color Only Button -->
+    <button id="randomColor">Randomize Color Only</button>
+    <script>
+      document.querySelector('#randomColor').addEventListener('click', function(event) {
+        const randomNumber = Math.floor(Math.random() * 17) + 1; 
+        const sdg = document.getElementById('random-sdg');
+        sdg.setAttribute('goal', randomNumber);
+        sdg.setAttribute('colorOnly', 'true');
+      });
+    </script>
+  
+    <!-- un-sdg element for randomization -->
     <un-sdg 
       id="random-sdg"
       goal="2" 
@@ -69,10 +88,10 @@
       loading="eager"
       fetchpriority="high"
     ></un-sdg>
-
+  
     <h2>Default</h2>
     <un-sdg></un-sdg>
-
+  
     <h2>un-sdg 1-17, circle, and all</h2>
     <div class="sdc-wrapper">
       <un-sdg goal="circle"></un-sdg>
@@ -95,7 +114,7 @@
       <un-sdg goal="16"></un-sdg>
       <un-sdg goal="17"></un-sdg>
     </div>
-
+  
     <h2>un-sdg 1-17, circle, and all with colorOnly set to "true"</h2>
     <div class="sdc-wrapper">
       <un-sdg goal="circle" colorOnly="true"></un-sdg>
@@ -118,6 +137,7 @@
       <un-sdg goal="16" colorOnly="true"></un-sdg>
       <un-sdg goal="17" colorOnly="true"></un-sdg>
     </div>
+  </div>
 
     <!--
     <h2>Slot usage</h2>

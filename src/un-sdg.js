@@ -81,12 +81,6 @@ export class unSdg extends DDDSuper(LitElement) {
         width: 100%;
         height: 100%;
       }
-      .random {
-        color: blue;
-      }
-      h1{
-        color: black;
-      }
     `];
   }
 
