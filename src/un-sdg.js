@@ -70,12 +70,8 @@ export class unSdg extends DDDSuper(LitElement) {
         --un-sdg-goal-17: rgb(25, 54, 103);
       }
       .svg-wrapper {
-        /*
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
-        */
-        padding: 0;
-        margin: 0;
       }
       img {
         width: 100%;
@@ -318,6 +314,7 @@ export class unSdg extends DDDSuper(LitElement) {
       <div class="svg-wrapper">
         <!-- Ternary. Only run <img/> if this.isImageVisible is true -->
         ${this.isImageVisible ? html `
+          <slot></slot>
           <img 
           src="${this.imgSrc}"
           alt="${this.label}"
